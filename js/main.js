@@ -905,6 +905,10 @@ SharkGame.Button = {
 };
 
 SharkGame.Changelog = {
+    "<a href='https://github.com/Toby222/SharkGame'>New Frontiers</a> patch 202409??a": [
+        "Path of Enlightenment now has a second level.",
+        "Added a new world.",
+    ],
     "<a href='https://github.com/Toby222/SharkGame'>New Frontiers</a> patch 20240909a": [
         "Added another one new sprite courtesy of <a href='https://github.com/glowkate'>Glowkate</a>!",
         "Added a heap of new fun facts.",

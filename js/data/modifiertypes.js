@@ -175,6 +175,31 @@ SharkGame.ModifierTypes = {
                     return input * (out === "kelp" ? genDegree : 1);
                 },
             },
+            willMultiplier: {
+                defaultValue: 1,
+                apply(current, degree, resource) {
+                    const incomes = SharkGame.ResourceMap.get(resource).income;
+                    if (incomes.will) {
+                        incomes.will = incomes.will * degree;
+                    }
+                    return current * degree;
+                },
+                effectDescription(degree, resource, background) {
+                    return (
+                        sharktext.getResourceName(resource, undefined, undefined, background) +
+                        " collection of " +
+                        sharktext.getResourceName("will", undefined, undefined, background) +
+                        " × " +
+                        degree
+                    );
+                },
+                getEffect(genDegree, _outDegree, _gen, out) {
+                    return out === "will" ? genDegree : 1;
+                },
+                applyToInput(input, genDegree, _outDegree, _gen, out) {
+                    return input * (out === "will" ? genDegree : 1);
+                },
+            },
             heaterMultiplier: {
                 defaultValue: 1,
                 apply(current, degree, resource) {

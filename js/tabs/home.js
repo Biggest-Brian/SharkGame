@@ -552,6 +552,10 @@ SharkGame.Home = {
             return false;
         }
 
+        if (action.prereq.custom && !action.prereq.custom()) {
+            return false;
+        }
+
         // check if resource cost exists
         if (!_.every(action.cost, (cost) => world.doesResourceExist(cost.resource))) {
             return false;

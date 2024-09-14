@@ -520,6 +520,78 @@ SharkGame.HomeMessages = {
                 message: "A wave of heat washes over you, and the dingy complex comes back to life. The gate turns on.",
             },
         ],
+
+        broken: [
+            {
+                name: "broken-default",
+                message: "The ocean is filled with masses of...something, or perhaps nothing, that never move. There is no life here.",
+            },
+            {
+                name: "broken-will",
+                unlock: { resource: { will: 50 } },
+                message: "Through the voids, you can feel something there. You reach out, with divine power...",
+            },
+            {
+                name: "broken-sharks",
+                unlock: { resource: { brokenShark: 5 } },
+                message: "The sharks bow down in the shadow of your divinity. They beg you to fix their world.",
+            },
+            {
+                name: "broken-rays",
+                unlock: { resource: { brokenRay: 12 } },
+                message: "The rays are distraught. They say their king has gone missing. They plead with you to find him.",
+            },
+            {
+                name: "broken-crabs",
+                unlock: { resource: { brokenCrab: 100 } },
+                message: "The crabs are grateful for their rescue, but so confused. They say they were lost to the void just seconds ago.",
+            },
+            {
+                name: "broken-dolphins",
+                unlock: { resource: { brokenDolphin: 35 } },
+                message: "The dolphins always come out panicking. They keep asking where the king is.",
+            },
+            {
+                name: "broken-sculptors",
+                unlock: { resource: { sharkSculptor: 5 } },
+                message: "The sculptors chisel away at rock, erecting crude, effective monuments to your power. Their creativity fuels your ability.",
+            },
+            {
+                name: "broken-memories",
+                unlock: { resource: { rescueTeam: 5 } },
+                message: "Each creature comes out of the void dazed and confused. The dolphins insist they've lost much of their memories.",
+            },
+            {
+                name: "broken-essence",
+                unlock: { resource: { liquidEssence: 5 } },
+                message: "The liquid essence balls up in pools on the floor. It radiates divine power.",
+            },
+            // {
+            //     name: "broken-machines",
+            //     unlock: { resource: { rescueTeam: 5 } },
+            //     message: "The machines channel divine energy into you. You glow a strange hue.",
+            // },
+            // {
+            //     name: "broken-memories",
+            //     unlock: { resource: { void: 1 } },
+            //     message: "You pierce through the void. The fabric of reality tears beneath your grasp.",
+            // },
+            {
+                name: "broken-out-of-reach",
+                unlock: { resource: { liquidEssence: 5 } },
+                message: "You have to keep going. You're almost there.",
+            },
+            {
+                name: "broken-temple",
+                unlock: { resource: { liquidEssence: 5 } },
+                message: "The temple radiates a strange energy. In the atrium, you see a gate.",
+            },
+            {
+                name: "broken-temple",
+                unlock: { resource: { liquidEssence: 5 } },
+                message: "Who were you, before? Before you started this journey?</br>You can't remember.",
+            },
+        ],
         /*
         {
             message:

@@ -407,4 +407,32 @@ SharkGame.WorldTypes = {
             clam: 1e7,
         },
     },
+    broken: {
+        name: "Broken",
+        vagueDesc: "Feels broken.",
+        desc: "This place has holes in it.",
+        shortDesc: "twilight",
+        foresight: {
+            vagueLongDesc: "You can feel cracks in this world.",
+            longDesc: "A lifeless ruin bathed in eternal twilight. Strange pockets of void are scattered throughout the ocean.",
+        },
+        entry: "As you enter, your head is...fine. You feel fine. Your head is clear. You can remember your journey, and the power you have accrued.",
+        style: "broken",
+        includedResources: [
+            "brokenresources",
+            "essence",
+            "world",
+            "aspectAffect",
+        ],
+        gateRequirements: {
+            slots: {
+                sand: 1e7,
+                crystal: 1e7,
+                kelp: 5e7,
+                heater: 40,
+                sharkonium: 1e6,
+                fish: 2e8,
+            },
+        },
+    },
 };

@@ -1,6 +1,13 @@
 /*------------------------------------------------------
   MIXINS
 -------------------------------------------------------*/
+//broken theme
+$color-lighter-broken: #ff9595;
+$color-light-broken: #b34960;
+$color-med-broken: #663343;
+$color-dark-broken: #210e22;
+$color-darker-broken: #0f090f;
+
 //abandoned theme
 $color-lighter-abandoned: #7e798f;
 $color-light-abandoned: #454152;
@@ -196,6 +203,14 @@ $sidebar-width: 25%;
     --color-title: #{rgba(red($color-med), green($color-med), blue($color-med), 0.2)};
 
     :not(.no-theme) {
+        &.broken {
+            --color-lighter: #{$color-lighter-broken};
+            --color-light: #{$color-light-broken};
+            --color-med: #{$color-med-broken};
+            --color-dark: #{$color-dark-broken};
+            --color-darker: #{$color-darker-broken};
+            --color-title: #{rgba(red($color-med-broken), green($color-med-broken), blue($color-med-broken), 0.2)};
+        }
         &.abandoned {
             --color-lighter: #{$color-lighter-abandoned};
             --color-light: #{$color-light-abandoned};

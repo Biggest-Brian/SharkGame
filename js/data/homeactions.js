@@ -4589,6 +4589,223 @@ SharkGame.HomeActions = {
             },
         },
     },
+    broken: {
+        findWill: {
+            name: "Find will",
+            effect: {
+                resource: {
+                    get will() {
+                        return SharkGame.Aspects.apotheosis.level > 0 ? SharkGame.Aspects.apotheosis.level * 4 : 1;
+                    },
+                },
+            },
+            cost: {},
+            prereq: {
+                custom() {
+                    return sharktime.getRunTime(true) > 10000;
+                },
+            },
+            outcomes: [
+                "Willed into existence.",
+                "Unlocked mental fortitude.",
+            ],
+            helpText: "Find the willpower to do something.",
+        },
+
+        getShark: {
+            name: "Rescue shark",
+            effect: {
+                resource: {
+                    brokenShark: 1,
+                },
+            },
+            cost: [{ resource: "will", costFunction: "linear", priceIncrease: 25 }],
+            max: "brokenShark",
+            prereq: {
+                resource: {
+                    will: 100,
+                },
+            },
+            outcomes: [
+                "Rescued a bignose shark.",
+                "Rescued a blacktip reef shark.",
+                "Rescued a blue shark.",
+                "Rescued a bull shark.",
+                "Rescued a cat shark.",
+                "Rescued a crocodile shark.",
+                "Rescued a dusky whaler shark.",
+                "Rescued a dogfish.",
+                "Rescued a graceful shark.",
+                "Rescued a grey reef shark.",
+                "Rescued a goblin shark.",
+                "Rescued a hammerhead shark.",
+                "Rescued a hardnose shark.",
+                "Rescued a lemon shark.",
+                "Rescued a milk shark.",
+                "Rescued a nervous shark.",
+                "Rescued an oceanic whitetip shark.",
+                "Rescued a pigeye shark.",
+                "Rescued a sandbar shark.",
+                "Rescued a silky shark.",
+                "Rescued a silvertip shark.",
+                "Rescued a sliteye shark.",
+                "Rescued a speartooth shark.",
+                "Rescued a spinner shark.",
+                "Rescued a spot-tail shark.",
+                "Rescued a mako shark.",
+                "Rescued a tiger shark.",
+                "Rescued a tawny shark.",
+                "Rescued a white shark.",
+                "Rescued a zebra shark.",
+            ],
+            helpText: "Find something familiar.",
+        },
+
+        getManta: {
+            name: "Locate ray",
+            effect: {
+                resource: {
+                    brokenRay: 1,
+                },
+            },
+            cost: [{ resource: "will", costFunction: "linear", priceIncrease: 50 }],
+            max: "brokenRay",
+            prereq: {
+                resource: {
+                    brokenShark: 6,
+                },
+            },
+            outcomes: [
+                "Rescued a spotted eagle ray.",
+                "Rescued a manta ray.",
+                "Rescued a stingray.",
+                "Rescued a clownnose ray.",
+                "Rescued a bluespotted maskray.",
+                "Rescued a bluntnose stingray.",
+                "Rescued a oman masked ray.",
+                "Rescued a bulls-eye electric ray.",
+                "Rescued a shorttailed electric ray.",
+                "Rescued a bentfin devil ray.",
+                "Rescued a lesser electric ray.",
+                "Rescued a cortez electric ray.",
+                "Rescued a feathertail stingray.",
+                "Rescued a thornback ray.",
+                "Rescued a giant shovelnose ray.",
+                "Rescued a pacific cownose ray.",
+                "Rescued a bluespotted ribbontail ray.",
+                "Rescued a marbled ribbontail ray.",
+                "Rescued a blackspotted torpedo ray.",
+                "Rescued a marbled torpedo ray.",
+                "Rescued a atlantic torpedo ray.",
+                "Rescued a panther torpedo ray.",
+                "Rescued a spotted torpedo ray.",
+                "Rescued a ocellated torpedo.",
+                "Rescued a caribbean torpedo.",
+                "Rescued a striped stingaree.",
+                "Rescued a sparesly-spotted stingaree.",
+                "Rescued a kapala stingaree.",
+                "Rescued a common stingaree.",
+                "Rescued a eastern fiddler ray.",
+                "Rescued a bullseye stingray.",
+                "Rescued a round stingray.",
+                "Rescued a yellow stingray.",
+                "Rescued a cortez round stingray.",
+                "Rescued a porcupine ray.",
+                "Rescued a sepia stingaree.",
+                "Rescued a banded stingaree.",
+                "Rescued a spotted stingaree.",
+                "Rescued a sea pancake.",
+            ],
+            helpText: "Find the companions.",
+        },
+
+        getCrab: {
+            name: "Find crab",
+            effect: {
+                resource: {
+                    brokenCrab: 1,
+                },
+            },
+            cost: [{ resource: "will", costFunction: "linear", priceIncrease: 10 }],
+            max: "brokenCrab",
+            prereq: {
+                upgrade: ["crabRecall"],
+            },
+            outcomes: [
+                "Rescued a bering hermit.",
+                "Rescued a blackeye hermit.",
+                "Rescued a butterfly crab.",
+                "Rescued a dungeness crab.",
+                "Rescued a flattop crab.",
+                "Rescued a greenmark hermit.",
+                "Rescued a golf-ball crab.",
+                "Rescued a graceful crab.",
+                "Rescued a graceful decorator crab.",
+                "Rescued a graceful kelp crab.",
+                "Rescued a green shore crab.",
+                "Rescued a heart crab.",
+                "Rescued a helmet crab.",
+                "Rescued a longhorn decorator crab.",
+                "Rescued a maroon hermit.",
+                "Rescued a moss crab.",
+                "Rescued a northern kelp crab.",
+                "Rescued a orange hairy hermit.",
+                "Rescued a purple shore crab.",
+                "Rescued a pygmy rock crab.",
+                "Rescued a puget sound king crab.",
+                "Rescued a red rock crab.",
+                "Rescued a scaled crab.",
+                "Rescued a sharpnose crab.",
+                "Rescued a spiny lithoid crab.",
+                "Rescued a widehand hermit.",
+                "Rescued a umbrella crab.",
+            ],
+            helpText: "Find the great workers.",
+        },
+
+        getDolphin: {
+            name: "Recall dolphin",
+            effect: {
+                resource: {
+                    brokenDolphin: 1,
+                },
+            },
+            cost: [
+                { resource: "will", costFunction: "linear", priceIncrease: 20 },
+                { resource: "determination", costFunction: "linear", priceIncrease: 1 },
+            ],
+            max: "brokenDolphin",
+            prereq: {
+                upgrade: ["dolphinRecall"],
+            },
+            outcomes: [
+                "Rescued a white beaked dolphin.",
+                "Rescued a short finned pilot whale.",
+                "Rescued a pantropical dolphin.",
+                "Rescued a long-finned pilot whale.",
+                "Rescued a hourglass dolphin.",
+                "Rescued a bottlenose dolphin.",
+                "Rescued a striped dolphin.",
+                "Rescued a pygmy killer whale.",
+                "Rescued a melon-headed whale.",
+                "Rescued an irrawaddy dolphin.",
+                "Rescued a dusky dolphin.",
+                "Rescued a clymene dolphin.",
+                "Rescued a black dolphin.",
+                "Rescued a southern right-whale dolphin.",
+                "Rescued a rough toothed dolphin.",
+                "Rescued a short beaked common dolphin.",
+                "Rescued a pacific white-sided dolphin.",
+                "Rescued a northern right-whale dolphin.",
+                "Rescued a long-snouted spinner dolphin.",
+                "Rescued a long-beaked common dolphin.",
+                "Rescued an atlantic white sided dolphin.",
+                "Rescued an atlantic hump-backed dolphin.",
+                "Rescued an atlantic spotted dolphin.",
+            ],
+            helpText: "Only because we have to.",
+        },
+    },
 };
 
 SharkGame.HomeActionCategories = {
@@ -4600,7 +4817,7 @@ SharkGame.HomeActionCategories = {
 
     basic: {
         name: "Basic",
-        actions: ["catchFish", "debugbutton", "prySponge", "prySponge2", "getClam", "getJellyfish"],
+        actions: ["catchFish", "debugbutton", "prySponge", "prySponge2", "getClam", "getJellyfish", "findWill"],
     },
 
     frenzy: {

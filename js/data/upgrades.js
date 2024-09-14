@@ -4527,4 +4527,155 @@ SharkGame.Upgrades = {
             },
         },
     },
+
+    broken: {
+        strongWill: {
+            name: "Strong Will",
+            desc: "Tap into your inner strength. Focus.",
+            researchedMessage:
+                "You find the will within yourself to push onward. You've only just begun.",
+            effectDesc:
+                "Willpower generation is twice as efficient. Harness your mental prowess!",
+            cost: {
+                inspiration: 10,
+            },
+            effect: {
+                resourceBoost: {
+                    will: 2,
+                },
+            },
+        },
+        powerfulInspiration: {
+            name: "Powerful Inspiration",
+            desc: "Remember the beauty of what you have seen. Focus.",
+            researchedMessage:
+                "",
+            effectDesc:
+                "Inspiration generation is twice as efficient.",
+            cost: {
+                inspiration: 10,
+            },
+            effect: {
+                resourceBoost: {
+                    inspiration: 2,
+                },
+            },
+        },
+        crabRecall: {
+            name: "Crab Recall",
+            desc: "Locating small creatures is difficult. Come up with a way to reach them.",
+            researchedMessage: "Devised a way to recall crabs from the void with mental nets. Who knows how that one works, really.",
+            effectDesc:
+                "Crabs can be rescued from the void. Seeing them saved fills you with determination.",
+            required: {
+                totals: {
+                    inspiration: 15,
+                },
+            },
+            cost: {
+                inspiration: 50,
+            },
+        },
+        sharkBonds: {
+            name: "Shark Bonds",
+            desc: "Your fellow sharks are eager to help.",
+            researchedMessage:
+                "The bonds of brother and sisterhood draw you closer together. These are your kind.",
+            effectDesc:
+                "Sharks give 4 times the willpower. You will save their kingdom, for them - for you.",
+            cost: {
+                inspiration: 100,
+            },
+            required: {
+                seen: ["determination"],
+            },
+            effect: {
+                incomeMultiplier: {
+                    brokenShark: 4,
+                },
+            },
+        },
+        dolphinRecall: {
+            name: "Dolphin Recall",
+            desc: "We're doing this for the sake of thoroughness. Not because we want to.",
+            researchedMessage: "It took a lot of doing, but unfortunately, you found a way to bring them back.",
+            effectDesc:
+                "Dolphins can be rescued from the void. They are significantly less annoying than usual, but still a burden on your psyche.",
+            required: {
+                seen: ["determination"],
+            },
+            cost: {
+                determination: 100,
+                inspiration: 250,
+            },
+        },
+        statsDiscovery: {
+            required: {
+                upgrade: ["dolphinRecall"],
+            },
+            cost: {
+                inspiration: 1000,
+            },
+        },
+        rayLegacy: {
+            name: "ray legacy lol",
+            desc: "",
+            researchedMessage:
+                ".",
+            effectDesc:
+                "rays give 5x more willpower.",
+            cost: {
+                inspiration: 5000,
+            },
+            required: {
+                seen: ["brokenDolphin"],
+            },
+            effect: {
+                willMultiplier: {
+                    brokenRay: 8,
+                },
+            },
+        },
+        crustaceanLegacy: {
+            name: "crusty legacy lol",
+            desc: "",
+            researchedMessage:
+                ".",
+            effectDesc:
+                "Crabs give 2.5 times more willpower and determination. .",
+            cost: {
+                inspiration: 5000,
+            },
+            required: {
+                seen: ["brokenCrab"],
+            },
+            effect: {
+                incomeMultiplier: {
+                    brokenCrab: 2.5,
+                },
+            },
+        },
+        // delphineIntervention: {
+        //     name: "Delphine Intervention",
+        //     desc: "Get ahold of yourselves, cetaceans!",
+        //     researchedMessage: "We all did the equivalent of slapping them across the faces. They collected themselves and promised to behave.",
+        //     effectDesc:
+        //         "Dolphins have stopped draining your determination. Finally.",
+        //     required: {
+        //         seen: ["brokenDolphin"],
+        //     },
+        //     cost: {
+        //         determination: 1000,
+        //         inspiration: 25000,
+        //     },
+        // },
+        /* remember: {
+            name: "Remember",
+            desc: "Focus.",
+            researchedMessage:
+                "I'm sorry, father.",
+            effectDesc:
+                "Remembered the day it all happened.",
+        }, */
+    },
 };

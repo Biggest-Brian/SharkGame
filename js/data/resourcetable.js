@@ -1,11 +1,13 @@
 "use strict";
+
 SharkGame.ResourceTable = {
     // SPECIAL
 
     numen: {
         name: "numina",
         singleName: "numen",
-        desc: "You think as a deity. You act as a deity. You are a deity.",
+        // desc: "You think as a deity. You act as a deity. You are a deity.",
+        desc: "You don't know what this does.",
         color: "#FFFFFF",
         value: -1,
     },
@@ -21,6 +23,8 @@ SharkGame.ResourceTable = {
     world: {
         get name() {
             switch (world.worldType) {
+                // case "finale":
+                //    return "you";
                 case "volcanic":
                     return "vents";
                 case "tempestuous":
@@ -31,6 +35,8 @@ SharkGame.ResourceTable = {
         },
         get singleName() {
             switch (world.worldType) {
+                // case "finale":
+                //    return "you";
                 case "volcanic":
                     return "vents";
                 case "tempestuous":
@@ -214,7 +220,10 @@ SharkGame.ResourceTable = {
         desc: "A home for the stranger.",
         color: "#9CC232",
         income: {
-            seaApple: 0.001,
+            get seaApple() {
+                if (world.worldType !== "broken") return 0.01;
+                else return 0;
+            },
         },
         value: 9,
     },
@@ -238,9 +247,9 @@ SharkGame.ResourceTable = {
     seagrass: {
         name: "seagrass",
         singleName: "seagrass",
-        desc: "Little plants.", // set this
-        color: "#5AC766", // set this
-        value: 10, // set this
+        desc: "Little plants.",
+        color: "#5AC766",
+        value: 10,
     },
 
     /* gravel: {
@@ -1242,6 +1251,120 @@ SharkGame.ResourceTable = {
         },
         value: 180000, // 250 sharkonium, 250 gravel (18000)
     }, */
+
+    // STUFF FOR FINALE BEGINS HERE
+
+    will: {
+        name: "will",
+        singleName: "will",
+        desc: "The power to do.",
+        color: "#FFD6FC",
+        value: 1,
+    },
+
+    inspiration: {
+        name: "inspiration",
+        singleName: "inspiration",
+        desc: "The power to create.",
+        color: "#E89EE3",
+        value: 1,
+    },
+
+    determination: {
+        name: "determination",
+        singleName: "determination",
+        desc: "The power to overcome.",
+        color: "#E35B8F",
+        value: 1,
+    },
+
+    imagination: {
+        name: "imagination",
+        singleName: "imagination",
+        desc: "The power to invent.",
+        color: "#FFD6FC",
+        value: 1,
+    },
+
+    power: {
+        name: "power",
+        singleName: "power",
+        desc: "A stream of divinity.",
+        color: "#FFD6FC",
+        value: 1,
+    },
+
+    liquidEssence: {
+        name: "liquid essence",
+        singleName: "liquid essence",
+        desc: "The shape of imagination. More stable than its concentrated counterpart.",
+        color: "#FFD6FC",
+        value: 9999999999999,
+    },
+
+    brokenShark: {
+        name: "sharks",
+        singleName: "shark",
+        desc: "Fallen from the apex of everything.",
+        color: "#92C1E0",
+        income: {
+            will: 1,
+        },
+        jobs: ["scientist", "nurse", "diver"],
+        value: 1000,
+    },
+
+    brokenRay: {
+        name: "rays",
+        singleName: "ray",
+        desc: "Forever loyal to the sharks.",
+        color: "#797CFC",
+        income: {
+            will: 1,
+            inspiration: 0.01,
+        },
+        jobs: ["laser", "maker", "scholar", "shoveler", "clamScavenger"],
+        value: 1000,
+    },
+
+    brokenCrab: {
+        name: "crabs",
+        singleName: "crab",
+        desc: "Only ever helpful.",
+        color: "#C03030",
+        income: {
+            will: 1,
+            determination: 0.002,
+        },
+        value: 1000,
+    },
+
+    brokenDolphin: {
+        name: "dolphins",
+        singleName: "dolphin",
+        desc: "Lost their way.",
+        color: "#C6BAC6",
+        income: {
+            inspiration: 0.05,
+        },
+        jobs: ["treasurer", "biologist", "historian"],
+        value: 1000,
+        forceIncome: true,
+    },
+
+    rescueTeam: {
+        name: "rescue teams",
+        singleName: "rescue team",
+        desc: "Find them.",
+        color: "#C6BAC6",
+        income: {
+            brokenShark: 0.02,
+            brokenRay: 0.01,
+            brokenCrab: 0.05,
+            brokenDolphin: 0.02,
+        },
+        value: 1000,
+    },
 };
 
 SharkGame.GeneratorIncomeAffectorsOriginal = {
@@ -1272,7 +1395,6 @@ SharkGame.GeneratorIncomeAffectorsOriginal = {
 
     // problem has since been solved
     // introduced RK4 method, added income caps to stop over-zealous growth.
-
     ice: {
         multiply: {
             shark: -0.001,
@@ -1318,6 +1440,11 @@ SharkGame.GeneratorIncomeAffected = {
 };
 
 SharkGame.ResourceIncomeAffectorsOriginal = {
+    determination: {
+        multiply: {
+            inspiration: 0.01,
+        },
+    },
     ice: {
         multiply: {
             ice: -0.00125,
@@ -1399,6 +1526,16 @@ SharkGame.ResourceCategories = {
         disposeMessage: ["Oh you'd like that, wouldn't you."],
         resources: ["tar", "ice"],
     },
+    abstract: {
+        name: "Abstract",
+        disposeMessage: [
+            "What? How did you get rid of that?",
+            "This is tantamount to giving up, but you're the boss.",
+            "This is absurd. How are you disposing of this, exactly?",
+            "Into the mental landfill.",
+        ],
+        resources: ["will", "inspiration", "determination", "imagination", "wisdom"],
+    },
     scientific: {
         name: "Science",
         disposeMessage: [
@@ -1441,7 +1578,7 @@ SharkGame.ResourceCategories = {
             "Was it something they said?",
             "Are you happy with what you've done?",
         ],
-        resources: ["shark", "ray", "crab", "shrimp", "lobster", "dolphin", "whale", "chimaera", "octopus", "eel", "squid", "urchin", "billfish"],
+        resources: ["shark", "ray", "crab", "shrimp", "lobster", "dolphin", "whale", "chimaera", "octopus", "eel", "squid", "urchin", "billfish", "brokenShark", "brokenRay", "brokenCrab", "brokenDolphin"],
     },
     animals: {
         name: "Animals",
@@ -1580,7 +1717,7 @@ SharkGame.ResourceCategories = {
             "The location has been barred.",
             "Alright everyone, pack it up! Get outta here!",
         ],
-        resources: ["spongeFarm", "coralFarm"],
+        resources: ["spongeFarm", "coralFarm", "ocean"],
     },
     special: {
         name: "Special",
@@ -1671,5 +1808,8 @@ SharkGame.InternalCategories = {
     },
     basics: {
         resources: ["essence", "world", "aspectAffect", "specialResourceOne", "specialResourceTwo"],
+    },
+    brokenresources: {
+        resources: ["will", "inspiration", "determination", "imagination", "wisdom", "brokenShark", "brokenRay", "brokenCrab", "brokenDolphin"],
     },
 };

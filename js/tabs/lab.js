@@ -3,11 +3,16 @@ SharkGame.Lab = {
     tabId: "lab",
     tabDiscovered: false,
     tabSeen: false,
-    tabName: "Laboratory",
+    get tabName() {
+        if (world.worldType === "broken") return "Aspirations";
+        else return "Laboratory";
+    },
     tabBg: "img/bg/bg-lab.png",
 
     get sceneImage() {
         switch (world.worldType) {
+            case "broken":
+                return "image/events/misc/scene-broken-lab.png";
             case "tempestuous":
                 if (res.getTotalResource("scientist") < 1) {
                     return "";
@@ -33,6 +38,8 @@ SharkGame.Lab = {
         switch (world.worldType) {
             case "tempestuous":
                 return { resource: { crab: 5 } };
+            case "broken":
+                return { resource: { inspiration: 1 } };
             default:
                 return { resource: { science: 10 } };
         }
@@ -42,6 +49,8 @@ SharkGame.Lab = {
 
     get message() {
         switch (world.worldType) {
+            case "broken":
+                return "There may not be science in this world, but you still have aspirations.<br>Progress at all costs.";
             case "tempestuous":
                 if (res.getTotalResource("scientist") < 1) {
                     return "Sort of just off to the side, there's a cave.";

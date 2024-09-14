@@ -6,7 +6,7 @@ SharkGame.Gateway = {
     transitioning: false,
     selectedWorld: "",
 
-    allowedWorlds: ["abandoned", "haven", "frigid", "shrouded", "marine", "volcanic", "tempestuous"],
+    allowedWorlds: ["abandoned", "haven", "frigid", "shrouded", "marine", "volcanic", "tempestuous", "broken"],
 
     completedWorlds: [],
 
@@ -1333,6 +1333,9 @@ SharkGame.Gateway.Messages = {
             "Tell me: Where do you see the line between friend and food? The urchins are as simple-minded as the fish.",
             "Do you wonder who the squid look up to?",
             "Do you wonder who built the great machine?",
+        ],
+        broken: [
+            "",
         ],
     },
     loss: [
