@@ -1254,6 +1254,46 @@ SharkGame.ResourceTable = {
 
     // STUFF FOR FINALE BEGINS HERE
 
+    remnant: {
+        name: "remnants",
+        singleName: "remnant",
+        desc: "Memories, or merely an echo.",
+        color: "#BBBBBB",
+        value: 1,
+    },
+
+    starflake: {
+        name: "starflakes",
+        singleName: "starflake",
+        desc: "Stars in the sand.",
+        color: "#FFD642",
+        value: 1,
+    },
+
+    dawnCrystal: {
+        name: "dawn crystals",
+        singleName: "dawn crystal",
+        desc: "The stolen sun.",
+        color: "#9E3FB5",
+        value: 1,
+    },
+
+    nighttide: {
+        name: "nighttide",
+        singleName: "nighttide",
+        desc: "Midnight, fallen from the sky.",
+        color: "#5C606B",
+        value: 5,
+    },
+
+    void: {
+        name: "void",
+        singleName: "void",
+        desc: "Pure unreality, commanded only by the highest beings.",
+        color: "#444444",
+        value: 5,
+    },
+
     will: {
         name: "will",
         singleName: "will",
@@ -1265,14 +1305,14 @@ SharkGame.ResourceTable = {
     inspiration: {
         name: "inspiration",
         singleName: "inspiration",
-        desc: "The power to create.",
+        desc: "The power to invent.",
         color: "#E89EE3",
         value: 1,
     },
 
-    determination: {
-        name: "determination",
-        singleName: "determination",
+    hope: {
+        name: "hope",
+        singleName: "hope",
         desc: "The power to overcome.",
         color: "#E35B8F",
         value: 1,
@@ -1281,8 +1321,8 @@ SharkGame.ResourceTable = {
     imagination: {
         name: "imagination",
         singleName: "imagination",
-        desc: "The power to invent.",
-        color: "#FFD6FC",
+        desc: "The power to dream.",
+        color: "#4492C9",
         value: 1,
     },
 
@@ -1290,7 +1330,7 @@ SharkGame.ResourceTable = {
         name: "power",
         singleName: "power",
         desc: "A stream of divinity.",
-        color: "#FFD6FC",
+        color: "#44C9AA",
         value: 1,
     },
 
@@ -1298,7 +1338,7 @@ SharkGame.ResourceTable = {
         name: "liquid essence",
         singleName: "liquid essence",
         desc: "The shape of imagination. More stable than its concentrated counterpart.",
-        color: "#FFD6FC",
+        color: "#95DECD",
         value: 9999999999999,
     },
 
@@ -1308,7 +1348,7 @@ SharkGame.ResourceTable = {
         desc: "Fallen from the apex of everything.",
         color: "#92C1E0",
         income: {
-            will: 1,
+            remnant: 1,
         },
         jobs: ["scientist", "nurse", "diver"],
         value: 1000,
@@ -1320,8 +1360,7 @@ SharkGame.ResourceTable = {
         desc: "Forever loyal to the sharks.",
         color: "#797CFC",
         income: {
-            will: 1,
-            inspiration: 0.01,
+            starflake: 1,
         },
         jobs: ["laser", "maker", "scholar", "shoveler", "clamScavenger"],
         value: 1000,
@@ -1333,8 +1372,7 @@ SharkGame.ResourceTable = {
         desc: "Only ever helpful.",
         color: "#C03030",
         income: {
-            will: 1,
-            determination: 0.002,
+            dawnCrystal: 0.1,
         },
         value: 1000,
     },
@@ -1349,13 +1387,36 @@ SharkGame.ResourceTable = {
         },
         jobs: ["treasurer", "biologist", "historian"],
         value: 1000,
-        forceIncome: true,
+    },
+
+    voidDiver: {
+        name: "void divers",
+        singleName: "void diver",
+        desc: "Meddling with darkness.",
+        color: "#797CFC",
+        income: {
+            will: 1,
+            inspiration: 0.01,
+        },
+        value: 1000,
+    },
+
+    rayAstronomers: {
+        name: "ray astronomers",
+        singleName: "ray astronomer",
+        desc: "The sky speaks to them. What did it say?",
+        color: "#797CFC",
+        income: {
+            will: 1,
+            inspiration: 0.01,
+        },
+        value: 1000,
     },
 
     rescueTeam: {
         name: "rescue teams",
         singleName: "rescue team",
-        desc: "Find them.",
+        desc: ".",
         color: "#C6BAC6",
         income: {
             brokenShark: 0.02,

@@ -4726,7 +4726,7 @@ SharkGame.HomeActions = {
                     brokenCrab: 1,
                 },
             },
-            cost: [{ resource: "will", costFunction: "linear", priceIncrease: 10 }],
+            cost: [{ resource: "will", costFunction: "linear", priceIncrease: 100 }],
             max: "brokenCrab",
             prereq: {
                 upgrade: ["crabRecall"],
@@ -4771,8 +4771,7 @@ SharkGame.HomeActions = {
                 },
             },
             cost: [
-                { resource: "will", costFunction: "linear", priceIncrease: 20 },
-                { resource: "determination", costFunction: "linear", priceIncrease: 1 },
+                { resource: "will", costFunction: "linear", priceIncrease: 50 },
             ],
             max: "brokenDolphin",
             prereq: {

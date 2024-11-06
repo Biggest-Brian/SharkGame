@@ -4529,29 +4529,67 @@ SharkGame.Upgrades = {
     },
 
     broken: {
-        strongWill: {
-            name: "Strong Will",
-            desc: "Tap into your inner strength. Focus.",
+        crystalFashioning: {
+            name: "Crystal Fashioning",
+            desc: ".",
             researchedMessage:
-                "You find the will within yourself to push onward. You've only just begun.",
+                ".",
             effectDesc:
-                "Willpower generation is twice as efficient. Harness your mental prowess!",
+                "If you will it so, you can use the crystals to blah blah something?.",
+            cost: {
+                remnant: 100,
+            },
+        },
+        remnantRecycling: {
+            name: "Remnant Recycling",
+            desc: "The sharks have been chasing around these bizarre-looking...things. Their appearence defies explanation.",
+            researchedMessage:
+                "If you focus, you can see the truth. There's a fish under all this garbage! With a little effort, you can set it free.",
+            effectDesc:
+                "Separating the fish from the remnants, you can take the power for yourself.",
+            cost: {
+                remnant: 100,
+            },
+        },
+        volatileMixtures: {
+            name: "Volatile Mixtures",
+            desc: "The remnants, starflakes, nighttide, and crystals contain a strange power that we can't understand. Let's mix them together and see if they blow up!",
+            researchedMessage:
+                "We have confirmed that mixing these things, indeed, blows them up. With one exception.",
+            effectDesc:
+                "We have learned that nighttide and starflakes can safely mix. Does that mean anything?",
             cost: {
                 inspiration: 10,
             },
             effect: {
                 resourceBoost: {
-                    will: 2,
+                    inspiration: 2,
                 },
             },
         },
-        powerfulInspiration: {
-            name: "Powerful Inspiration",
-            desc: "Remember the beauty of what you have seen. Focus.",
+        strangePaints: {
+            name: "Strange Paints",
+            desc: "Putting nighttide and starflakes together makes a semi-solid sparkle paste. We NEED to know more. It's so pretty.",
             researchedMessage:
-                "",
+                "Reports of its shininess were greatly exaggerated, but it makes a great ",
             effectDesc:
-                "Inspiration generation is twice as efficient.",
+                "Discovered But sparkles are not inherently useful. Noted.",
+            cost: {
+                inspiration: 10,
+            },
+            effect: {
+                resourceBoost: {
+                    inspiration: 2,
+                },
+            },
+        },
+        creativePursuits: {
+            name: "Creative Pursuits",
+            desc: "The dolphins have been requesting a supply of paint. Look, normally we'd detest this sort of time-wasting - but it's not like we have another use for it.",
+            researchedMessage:
+                "The dolphins carefully explained to us the actual, physically important power of creativity. We're a bit doubtful, but, okay, sure.",
+            effectDesc:
+                "Dolphin artists can be equipped. Let's see if they have any idea what they're talking about.",
             cost: {
                 inspiration: 10,
             },

@@ -50,7 +50,7 @@ SharkGame.Lab = {
     get message() {
         switch (world.worldType) {
             case "broken":
-                return "There may not be science in this world, but you still have aspirations.<br>Progress at all costs.";
+                return "You might not have science, but you still have goals.<br>The frenzy stands ready to help you achieve your aspirations.";
             case "tempestuous":
                 if (res.getTotalResource("scientist") < 1) {
                     return "Sort of just off to the side, there's a cave.";

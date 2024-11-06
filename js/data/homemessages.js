@@ -524,7 +524,7 @@ SharkGame.HomeMessages = {
         broken: [
             {
                 name: "broken-default",
-                message: "The ocean is filled with masses of...something, or perhaps nothing, that never move. There is no life here.",
+                message: "The ocean is filled with masses of...something, or perhaps nothing, that never move. Strange shapes move nearby.",
             },
             {
                 name: "broken-will",
@@ -537,35 +537,36 @@ SharkGame.HomeMessages = {
                 message: "The sharks bow down in the shadow of your divinity. They beg you to fix their world.",
             },
             {
-                name: "broken-rays",
-                unlock: { resource: { brokenRay: 12 } },
-                message: "The rays are distraught. They say their king has gone missing. They plead with you to find him.",
+                name: "broken-hope",
+                unlock: { resource: { hope: 200 } },
+                message: "The frenzy . They say they are filled with hope.",
             },
             {
-                name: "broken-crabs",
+                name: "broken-night",
                 unlock: { resource: { brokenCrab: 100 } },
-                message: "The crabs are grateful for their rescue, but so confused. They say they were lost to the void just seconds ago.",
+                message: "",
             },
             {
-                name: "broken-dolphins",
-                unlock: { resource: { brokenDolphin: 35 } },
-                message: "The dolphins always come out panicking. They keep asking where the king is.",
-            },
-            {
-                name: "broken-sculptors",
-                unlock: { resource: { sharkSculptor: 5 } },
-                message: "The sculptors chisel away at rock, erecting crude, effective monuments to your power. Their creativity fuels your ability.",
-            },
-            {
-                name: "broken-memories",
-                unlock: { resource: { rescueTeam: 5 } },
-                message: "Each creature comes out of the void dazed and confused. The dolphins insist they've lost much of their memories.",
+                name: "broken-art",
+                unlock: { resource: { dolphinArtist: 35 } },
+                message: "The artists paint the ocean with silent, magical strokes. Wisps of a strange energy flow freely through the ocean currents.",
             },
             {
                 name: "broken-essence",
                 unlock: { resource: { liquidEssence: 5 } },
-                message: "The liquid essence balls up in pools on the floor. It radiates divine power.",
+                message: "The liquid essence balls up in beads on the ocean floor. It radiates divine power.",
             },
+            {
+                name: "broken-sky",
+                unlock: { resource: { sharkSculptor: 5 } },
+                message: "The astronomers carefully tune their instruments. Stars, glowing softly, slowly fill the sky as they work.",
+            },
+            {
+                name: "broken-memories",
+                unlock: { resource: { rescueTeam: 5 } },
+                message: "",
+            },
+
             // {
             //     name: "broken-machines",
             //     unlock: { resource: { rescueTeam: 5 } },
@@ -579,7 +580,7 @@ SharkGame.HomeMessages = {
             {
                 name: "broken-out-of-reach",
                 unlock: { resource: { liquidEssence: 5 } },
-                message: "You have to keep going. You're almost there.",
+                message: "The sharks, rays, and crabs mourn their king.",
             },
             {
                 name: "broken-temple",
@@ -589,7 +590,7 @@ SharkGame.HomeMessages = {
             {
                 name: "broken-temple",
                 unlock: { resource: { liquidEssence: 5 } },
-                message: "Who were you, before? Before you started this journey?</br>You can't remember.",
+                message: "Who were you, before? Before you started this journey?</br>You realize you can't remember.",
             },
         ],
         /*
