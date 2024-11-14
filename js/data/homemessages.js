@@ -524,32 +524,42 @@ SharkGame.HomeMessages = {
         broken: [
             {
                 name: "broken-default",
-                message: "The ocean is filled with masses of...something, or perhaps nothing, that never move. Strange shapes move nearby.",
+                message: "The ocean is filled with masses of...something, or perhaps nothing, that never move. Strange shapes dart around them through the waters.",
             },
             {
                 name: "broken-will",
-                unlock: { resource: { will: 50 } },
+                unlock: { resource: { will: 20 } },
                 message: "Through the voids, you can feel something there. You reach out, with divine power...",
             },
             {
+                name: "broken-remnants",
+                unlock: { resource: { remnant: 50 } },
+                message: "Rows of strange, sort of fish-like things lay sprawled out before you. They swim in place, making strange noises.",
+            },
+            {
                 name: "broken-sharks",
-                unlock: { resource: { brokenShark: 5 } },
+                unlock: { resource: { brokenShark: 200 } },
                 message: "The sharks bow down in the shadow of your divinity. They beg you to fix their world.",
             },
             {
                 name: "broken-hope",
                 unlock: { resource: { hope: 200 } },
-                message: "The frenzy . They say they are filled with hope.",
+                message: "The frenzy... They say they are filled with hope.",
+            },
+            {
+                name: "broken-abstract",
+                unlock: { resource: { abstract: 5 } },
+                message: "These crystal the crabs have been digging up feel...familiar. They look the same from every angle, as if they aren't really there.",
             },
             {
                 name: "broken-night",
-                unlock: { resource: { brokenCrab: 100 } },
-                message: "",
+                unlock: { resource: { nighttide: 1000 } },
+                message: "The nighttide we bring back .",
             },
             {
                 name: "broken-art",
-                unlock: { resource: { dolphinArtist: 35 } },
-                message: "The artists paint the ocean with silent, magical strokes. Wisps of a strange energy flow freely through the ocean currents.",
+                unlock: { resource: { dolphinArtist: 5 } },
+                message: "Artists paint the ocean with silent, magical strokes. The paint sparkles in the eternal twilight.",
             },
             {
                 name: "broken-essence",
@@ -559,7 +569,7 @@ SharkGame.HomeMessages = {
             {
                 name: "broken-sky",
                 unlock: { resource: { sharkSculptor: 5 } },
-                message: "The astronomers carefully tune their instruments. Stars, glowing softly, slowly fill the sky as they work.",
+                message: "The astronomers carefully tune their instruments. The starry sky, glowing softly, slowly fills as they work.",
             },
             {
                 name: "broken-memories",
@@ -585,12 +595,12 @@ SharkGame.HomeMessages = {
             {
                 name: "broken-temple",
                 unlock: { resource: { liquidEssence: 5 } },
-                message: "The temple radiates a strange energy. In the atrium, you see a gate.",
+                message: ".",
             },
             {
-                name: "broken-temple",
+                name: "broken-dawn",
                 unlock: { resource: { liquidEssence: 5 } },
-                message: "Who were you, before? Before you started this journey?</br>You realize you can't remember.",
+                message: "Who were you, before? Before you started this journey?</br>You realize that... you can't remember.",
             },
         ],
         /*

@@ -4529,6 +4529,17 @@ SharkGame.Upgrades = {
     },
 
     broken: {
+        remnantRecycling: {
+            name: "Remnant Recycling",
+            desc: "The sharks have been chasing and hunting remnants for a while now. Coming together, you can start to feel their power.",
+            researchedMessage:
+                "If you focus, you can see the truth. There's a fish under all this garbage! With a little effort, you can set it free.",
+            effectDesc:
+                "Separating the fish from the remnants, you can take the power for yourself.",
+            cost: {
+                remnant: 5,
+            },
+        },
         crystalFashioning: {
             name: "Crystal Fashioning",
             desc: ".",
@@ -4536,17 +4547,6 @@ SharkGame.Upgrades = {
                 ".",
             effectDesc:
                 "If you will it so, you can use the crystals to blah blah something?.",
-            cost: {
-                remnant: 100,
-            },
-        },
-        remnantRecycling: {
-            name: "Remnant Recycling",
-            desc: "The sharks have been chasing around these bizarre-looking...things. Their appearence defies explanation.",
-            researchedMessage:
-                "If you focus, you can see the truth. There's a fish under all this garbage! With a little effort, you can set it free.",
-            effectDesc:
-                "Separating the fish from the remnants, you can take the power for yourself.",
             cost: {
                 remnant: 100,
             },
@@ -4681,6 +4681,25 @@ SharkGame.Upgrades = {
                 ".",
             effectDesc:
                 "Crabs give 2.5 times more willpower and determination. .",
+            cost: {
+                inspiration: 5000,
+            },
+            required: {
+                seen: ["brokenCrab"],
+            },
+            effect: {
+                incomeMultiplier: {
+                    brokenCrab: 2.5,
+                },
+            },
+        },
+        dawnCracking: {
+            name: "Dawn Cracking",
+            desc: "",
+            researchedMessage:
+                ".",
+            effectDesc:
+                "raise the sun. .",
             cost: {
                 inspiration: 5000,
             },

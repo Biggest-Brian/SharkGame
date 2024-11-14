@@ -1254,10 +1254,43 @@ SharkGame.ResourceTable = {
 
     // STUFF FOR FINALE BEGINS HERE
 
+    brokenRay: {
+        name: "rays",
+        singleName: "ray",
+        desc: "Forever committed.",
+        color: "#797CFC",
+        income: {
+            starflake: 1,
+        },
+        value: 1000,
+    },
+
+    brokenCrab: {
+        name: "crabs",
+        singleName: "crab",
+        desc: "Always driven.",
+        color: "#C03030",
+        income: {
+            dawnCrystal: 0.1,
+        },
+        value: 1000,
+    },
+
+    brokenShark: {
+        name: "sharks",
+        singleName: "shark",
+        desc: "They fell from the apex of everything.",
+        color: "#92C1E0",
+        income: {
+            remnant: 1,
+        },
+        value: 1000,
+    },
+
     remnant: {
         name: "remnants",
         singleName: "remnant",
-        desc: "Memories, or merely an echo.",
+        desc: "Memories.",
         color: "#BBBBBB",
         value: 1,
     },
@@ -1282,16 +1315,18 @@ SharkGame.ResourceTable = {
         name: "nighttide",
         singleName: "nighttide",
         desc: "Midnight, fallen from the sky.",
-        color: "#5C606B",
+        color: "#24262E",
         value: 5,
     },
 
-    void: {
-        name: "void",
-        singleName: "void",
-        desc: "Pure unreality, commanded only by the highest beings.",
-        color: "#444444",
-        value: 5,
+    // IMPORTANT balance feature!
+    // you MUST NEVER have enough abstract generation to fully outpace your other resources
+    abstract: {
+        name: "abstract",
+        singleName: "abstract",
+        desc: "The key to everything.",
+        color: "#FFFFFF",
+        value: 1,
     },
 
     will: {
@@ -1302,19 +1337,11 @@ SharkGame.ResourceTable = {
         value: 1,
     },
 
-    inspiration: {
-        name: "inspiration",
-        singleName: "inspiration",
-        desc: "The power to invent.",
-        color: "#E89EE3",
-        value: 1,
-    },
-
-    hope: {
-        name: "hope",
-        singleName: "hope",
-        desc: "The power to overcome.",
-        color: "#E35B8F",
+    insight: {
+        name: "insight",
+        singleName: "insight",
+        desc: "The power to understand.",
+        color: "#4492C9",
         value: 1,
     },
 
@@ -1326,103 +1353,137 @@ SharkGame.ResourceTable = {
         value: 1,
     },
 
-    power: {
-        name: "power",
-        singleName: "power",
+    wonder: {
+        name: "wonder",
+        singleName: "wonder",
         desc: "A stream of divinity.",
         color: "#44C9AA",
         value: 1,
     },
 
-    liquidEssence: {
-        name: "liquid essence",
-        singleName: "liquid essence",
-        desc: "The shape of imagination. More stable than its concentrated counterpart.",
-        color: "#95DECD",
-        value: 9999999999999,
+    // this is a final resource
+    void: {
+        name: "void",
+        singleName: "void",
+        desc: "Pure unreality, commanded only by the highest beings.",
+        color: "#444444",
+        value: 5,
     },
 
-    brokenShark: {
-        name: "sharks",
-        singleName: "shark",
-        desc: "Fallen from the apex of everything.",
-        color: "#92C1E0",
-        income: {
-            remnant: 1,
-        },
-        jobs: ["scientist", "nurse", "diver"],
-        value: 1000,
-    },
-
-    brokenRay: {
-        name: "rays",
-        singleName: "ray",
-        desc: "Forever loyal to the sharks.",
-        color: "#797CFC",
-        income: {
-            starflake: 1,
-        },
-        jobs: ["laser", "maker", "scholar", "shoveler", "clamScavenger"],
-        value: 1000,
-    },
-
-    brokenCrab: {
-        name: "crabs",
-        singleName: "crab",
-        desc: "Only ever helpful.",
-        color: "#C03030",
-        income: {
-            dawnCrystal: 0.1,
-        },
-        value: 1000,
-    },
-
-    brokenDolphin: {
-        name: "dolphins",
-        singleName: "dolphin",
-        desc: "Lost their way.",
-        color: "#C6BAC6",
-        income: {
-            inspiration: 0.05,
-        },
-        jobs: ["treasurer", "biologist", "historian"],
-        value: 1000,
-    },
-
+    // uses a dawn crystal charm to navigate the void (?)
     voidDiver: {
         name: "void divers",
         singleName: "void diver",
         desc: "Meddling with darkness.",
         color: "#797CFC",
         income: {
-            will: 1,
-            inspiration: 0.01,
+            abstract: 0.5,
         },
         value: 1000,
     },
 
-    rayAstronomers: {
-        name: "ray astronomers",
-        singleName: "ray astronomer",
-        desc: "The sky speaks to them. What did it say?",
+    placeholder: {
+        name: "placeholder",
+        singleName: "placeholder",
+        desc: "A step too far.",
         color: "#797CFC",
         income: {
-            will: 1,
-            inspiration: 0.01,
+            abstract: 0.5,
         },
         value: 1000,
     },
 
+    rayBucketer: {
+        name: "ray bucketers",
+        singleName: "ray bucketer",
+        desc: "Anything for power...",
+        color: "#797CFC",
+        income: {
+            nighttide: 1,
+        },
+        value: 1000,
+    },
+
+    // costs starflakes
+    crabPainter: {
+        name: "crab painters",
+        singleName: "crab painter",
+        desc: "The great artists.",
+        color: "#797CFC",
+        income: {
+            nighttide: -1,
+            abstract: -1,
+            imagination: 0.1,
+        },
+        value: 1000,
+    },
+
+    // costs nighttide
+    rayAstronomer: {
+        name: "ray astronomers",
+        singleName: "ray astronomer",
+        desc: "The sky spoke to them. What did it say?",
+        color: "#797CFC",
+        income: {
+            starflake: -1,
+            abstract: -1,
+            wonder: 0.1,
+        },
+        value: 1000,
+    },
+
+    // imagination + wonder =
+    liquidEssence: {
+        name: "liquid essence",
+        singleName: "liquid essence",
+        desc: '"Know the shape of imagination."',
+        color: "#95DECD",
+        value: 9999999999999,
+    },
+
+    sonicPulsar: {
+        name: "sonic pulsars",
+        singleName: "sonic pulsar",
+        desc: "Vibrating with power.",
+        color: "#C6BAC6",
+        income: {
+            starflake: 50,
+        },
+        value: 1000,
+    },
+
+    thing: {
+        name: "??",
+        singleName: "whatever placeholder text lol",
+        desc: "Harness the energy within.",
+        color: "#C6BAC6",
+        income: {
+            remnant: 50,
+        },
+        value: 1000,
+    },
+
+    voidCrusher: {
+        name: "void crusher",
+        singleName: "void crusher",
+        desc: "Repair reality.",
+        color: "#C6BAC6",
+        income: {
+            void: 0.01,
+        },
+        value: 1000,
+    },
+
+    // costs one of each!
     rescueTeam: {
         name: "rescue teams",
         singleName: "rescue team",
-        desc: ".",
+        desc: "Save the frenzy. Save the world.",
         color: "#C6BAC6",
         income: {
-            brokenShark: 0.02,
+            brokenShark: 0.05,
             brokenRay: 0.01,
-            brokenCrab: 0.05,
-            brokenDolphin: 0.02,
+            brokenCrab: 0.01,
         },
         value: 1000,
     },
@@ -1590,12 +1651,13 @@ SharkGame.ResourceCategories = {
     abstract: {
         name: "Abstract",
         disposeMessage: [
-            "What? How did you get rid of that?",
+            "What? How did you get rid of THAT?",
             "This is tantamount to giving up, but you're the boss.",
             "This is absurd. How are you disposing of this, exactly?",
             "Into the mental landfill.",
+            "Okay. If you say so. Weirdo.",
         ],
-        resources: ["will", "inspiration", "determination", "imagination", "wisdom"],
+        resources: ["will", "insight", "imagination", "wonder"],
     },
     scientific: {
         name: "Science",
@@ -1616,7 +1678,7 @@ SharkGame.ResourceCategories = {
         ],
     },
     magical: {
-        name: "Magical",
+        name: "Magic",
         disposeMessage: [
             "Pff, magic was overrated anyways.",
             "Magic isn't real anyways! Right?",
@@ -1626,7 +1688,7 @@ SharkGame.ResourceCategories = {
             "Seriously though, how DO you dispose of magic?",
             "Magic wielders all across the sea feel a disturbance as the stuff is disposed of.",
         ],
-        resources: ["arcana"],
+        resources: ["arcana", "liquidEssence"],
     },
     frenzy: {
         name: "Frenzy",
